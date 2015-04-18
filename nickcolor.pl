@@ -14,7 +14,7 @@ $VERSION = "1.2";
 
 # hm.. i should make it possible to use the existing one..
 Irssi::theme_register([
-  'pubmsg_hilight', '{pubmsghinick $0 $3 $1}$2'
+  'pubmsg_hilight', '{pubmsghinick $0 $3 $[-9]1}$2'
 ]);
 
 my %saved_colors;
@@ -125,7 +125,7 @@ sub sig_public {
   } 
 
   $color = "0".$color if ($color < 10);
-  $server->command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$0}}$1');
+  $server->command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$[-9]0}}$1');
 }
 
 sub cmd_color {
